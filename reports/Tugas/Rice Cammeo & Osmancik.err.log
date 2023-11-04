@@ -27,7 +27,7 @@ EXTENT = float(input("masukkan nilai extent : "))
 # buat data baru untuk prediksi
 new_data = np.array([[AREA, PERIMETER, MAJORAXIS, MINORAXIS, ECCENTRICITY, CONVEX_AREA, EXTENT]])
 
-# normalisasi data baru menggunakan scaler yang telah disimpan
+# normalisasi d146ata baru menggunakan scaler yang telah disimpan
 new_data_scaled = scalerr.transform(new_data)
 
 # prediksi CLASS untuk data baru menggunakan model SVM
@@ -43,7 +43,7 @@ else:
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
-[0;32m<ipython-input-10-a337fa7e6af7>[0m in [0;36m<cell line: 2>[0;34m()[0m
+[0;32m<ipython-input-10-a143e937780f>[0m in [0;36m<cell line: 2>[0;34m()[0m
 [1;32m      1[0m [0;31m# untuk memasukkan nilai-nilai fitur[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mAREA[0m [0;34m=[0m [0mfloat[0m[0;34m([0m[0minput[0m[0;34m([0m[0;34m"masukkan nilai area : "[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mPERIMETER[0m [0;34m=[0m [0mfloat[0m[0;34m([0m[0minput[0m[0;34m([0m[0;34m"masukkan nilai perimeter : "[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
