@@ -404,6 +404,91 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-3c7159a80f02&gt;</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pickle</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_distributor_init</span>  <span class="c1"># noqa: F401</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">__check_build</span>  <span class="c1"># noqa: F401</span>
+<span class="ne">---&gt; </span><span class="mi">82</span>     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">clone</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>     <span class="kn">from</span> <span class="nn">.utils._show_versions</span> <span class="kn">import</span> <span class="n">show_versions</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> 
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">base</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">__version__</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">._config</span> <span class="kn">import</span> <span class="n">get_config</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">_IS_32BIT</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">.utils._set_output</span> <span class="kn">import</span> <span class="n">_SetOutputMixin</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">.utils._tags</span> <span class="kn">import</span> <span class="p">(</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">import</span> <span class="nn">warnings</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">issparse</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> 
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">.murmurhash</span> <span class="kn">import</span> <span class="n">murmurhash3_32</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">sparse</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span> 
+<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="c1"># For backward compatibility with v0.19.</span>
+<span class="ne">--&gt; </span><span class="mi">283</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">csgraph</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span> 
+<span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="c1"># Deprecated namespaces, to be removed in v2.0.0</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">sparse</span><span class="o">/</span><span class="n">csgraph</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>            <span class="s1">&#39;NegativeCycleError&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span> 
+<span class="ne">--&gt; </span><span class="mi">185</span> <span class="kn">from</span> <span class="nn">._laplacian</span> <span class="kn">import</span> <span class="n">laplacian</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="kn">from</span> <span class="nn">._shortest_path</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="n">shortest_path</span><span class="p">,</span> <span class="n">floyd_warshall</span><span class="p">,</span> <span class="n">dijkstra</span><span class="p">,</span> <span class="n">bellman_ford</span><span class="p">,</span> <span class="n">johnson</span><span class="p">,</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">sparse</span><span class="o">/</span><span class="n">csgraph</span><span class="o">/</span><span class="n">_laplacian</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">isspmatrix</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">scipy.sparse.linalg</span> <span class="kn">import</span> <span class="n">LinearOperator</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">sparse</span><span class="o">/</span><span class="n">linalg</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">120</span><span class="s2"> from ._isolve import *</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span><span class="s2"> from ._dsolve import *</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span><span class="s2"> from ._interface import *</span>
+
+<span class="s2">/usr/local/lib/python3.10/dist-packages/scipy/sparse/linalg/_isolve/__init__.py in &lt;module&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2"> </span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> #from info import __doc__</span>
+<span class="ne">----&gt; </span><span class="mi">4</span><span class="s2"> from .iterative import *</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2"> from .minres import minres</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s2"> from .lgmres import lgmres</span>
+
+<span class="s2">/usr/local/lib/python3.10/dist-packages/scipy/sparse/linalg/_isolve/iterative.py in &lt;module&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> import numpy as np</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> </span>
+<span class="ne">----&gt; </span><span class="mi">9</span><span class="s2"> from . import _iterative</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> from scipy.sparse.linalg._interface import LinearOperator</span>
+
+<span class="ne">ImportError</span>: libopenblasp-r0-41284840.3.18.so: cannot open shared object file: No such file or directory
+
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NOTE</span>: If your import is failing due to a missing package, you can
+<span class="s2">manually install dependencies using either !pip or !apt.</span>
+
+<span class="s2">To view examples of installing some common dependencies, click the</span>
+<span class="s2">&quot;Open Examples&quot; button below.</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -415,7 +500,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-50ead139-10b0-44cc-89fc-fb404eae86e2" class="colab-df-container">
+  <div id="df-d24623fb-e37f-4247-886a-3688d92353b5" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -571,17 +656,17 @@ document.write(`
 <p>3810 rows × 8 columns</p>
 </div>
     <div class="colab-df-buttons">
-      
+
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-50ead139-10b0-44cc-89fc-fb404eae86e2')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d24623fb-e37f-4247-886a-3688d92353b5')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
-      
+
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
   </svg>
     </button>
-    
+
   <style>
     .colab-df-container {
       display:flex;
@@ -625,12 +710,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-50ead139-10b0-44cc-89fc-fb404eae86e2 button.colab-df-convert');
+        document.querySelector('#df-d24623fb-e37f-4247-886a-3688d92353b5 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-50ead139-10b0-44cc-89fc-fb404eae86e2');
+        const element = document.querySelector('#df-d24623fb-e37f-4247-886a-3688d92353b5');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -648,10 +733,137 @@ document.write(`
       }
     </script>
   </div>
-  
+
+
+<div id="df-533f2747-c70e-4dac-865b-04649bed91f1">
+  <button class="colab-df-quickchart" onclick="quickchart('df-533f2747-c70e-4dac-865b-04649bed91f1')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-533f2747-c70e-4dac-865b-04649bed91f1 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
     </div>
   </div>
-  </div></div>
+</div></div>
 </div>
 <section id="pre-pocessing">
 <h2><strong>PRE-POCESSING</strong><a class="headerlink" href="#pre-pocessing" title="Permalink to this heading">#</a></h2>
@@ -753,11 +965,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Random Forest : 0.9199475065616798
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Random Forest : 0.9225721784776902
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-e3a84d23-6051-4dc5-94fa-a5c376a7c9e1" class="colab-df-container">
+  <div id="df-fd6c35ec-6352-4bbe-a55c-997366b54a76" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -841,17 +1053,17 @@ document.write(`
 <p>762 rows × 2 columns</p>
 </div>
     <div class="colab-df-buttons">
-      
+
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-e3a84d23-6051-4dc5-94fa-a5c376a7c9e1')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-fd6c35ec-6352-4bbe-a55c-997366b54a76')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
-      
+
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
   </svg>
     </button>
-    
+
   <style>
     .colab-df-container {
       display:flex;
@@ -895,12 +1107,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-e3a84d23-6051-4dc5-94fa-a5c376a7c9e1 button.colab-df-convert');
+        document.querySelector('#df-fd6c35ec-6352-4bbe-a55c-997366b54a76 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-e3a84d23-6051-4dc5-94fa-a5c376a7c9e1');
+        const element = document.querySelector('#df-fd6c35ec-6352-4bbe-a55c-997366b54a76');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -918,10 +1130,137 @@ document.write(`
       }
     </script>
   </div>
-  
+
+
+<div id="df-8dc2b865-f6f1-4377-b491-da79ff3471a9">
+  <button class="colab-df-quickchart" onclick="quickchart('df-8dc2b865-f6f1-4377-b491-da79ff3471a9')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-8dc2b865-f6f1-4377-b491-da79ff3471a9 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
     </div>
   </div>
-  </div></div>
+</div></div>
 </div>
 <p><strong>SVM</strong></p>
 <p>Support Vector Machine adalah algoritma machine learning yang digunakan untuk masalah klasifikasi dan regresi. Bekerja dengan mencari hiperlane terbaik yang memisahkan dua kelas data dalam ruang berdimensi tinggi. Misalkan memiliki dua kelas data, yaitu kelas 0 dan kelas 1. Untuk menentukan sebuah data termasuk dalam kelas 0 atau kelas 1 dilakukan dengan menghitung prediksi berdasarkan posisi data terhadap hiperplane. Rumus untuk memprediksi kelas data baru :</p>
@@ -967,7 +1306,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-0770d8de-d3bd-4459-b486-a99f8dc83ebf" class="colab-df-container">
+  <div id="df-d389f177-cd5c-48fc-9370-33ed0cb690f6" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1051,17 +1390,17 @@ document.write(`
 <p>762 rows × 2 columns</p>
 </div>
     <div class="colab-df-buttons">
-      
+
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-0770d8de-d3bd-4459-b486-a99f8dc83ebf')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d389f177-cd5c-48fc-9370-33ed0cb690f6')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
-      
+
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
   </svg>
     </button>
-    
+
   <style>
     .colab-df-container {
       display:flex;
@@ -1105,12 +1444,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-0770d8de-d3bd-4459-b486-a99f8dc83ebf button.colab-df-convert');
+        document.querySelector('#df-d389f177-cd5c-48fc-9370-33ed0cb690f6 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-0770d8de-d3bd-4459-b486-a99f8dc83ebf');
+        const element = document.querySelector('#df-d389f177-cd5c-48fc-9370-33ed0cb690f6');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1128,10 +1467,137 @@ document.write(`
       }
     </script>
   </div>
-  
+
+
+<div id="df-f0123522-6dce-45bf-8099-f0684df1618f">
+  <button class="colab-df-quickchart" onclick="quickchart('df-f0123522-6dce-45bf-8099-f0684df1618f')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-f0123522-6dce-45bf-8099-f0684df1618f button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
     </div>
   </div>
-  </div></div>
+</div></div>
 </div>
 <p><strong>LOGISTIC REGRESSION</strong></p>
 <div class="cell docutils container">
@@ -1162,7 +1628,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-fafc9194-9e8a-427b-ae45-d6386a9eb699" class="colab-df-container">
+  <div id="df-9b7a5f21-9fc1-45e2-b081-6a68bbbcf1e2" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1246,17 +1712,17 @@ document.write(`
 <p>762 rows × 2 columns</p>
 </div>
     <div class="colab-df-buttons">
-      
+
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-fafc9194-9e8a-427b-ae45-d6386a9eb699')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-9b7a5f21-9fc1-45e2-b081-6a68bbbcf1e2')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
-      
+
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
   </svg>
     </button>
-    
+
   <style>
     .colab-df-container {
       display:flex;
@@ -1300,12 +1766,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-fafc9194-9e8a-427b-ae45-d6386a9eb699 button.colab-df-convert');
+        document.querySelector('#df-9b7a5f21-9fc1-45e2-b081-6a68bbbcf1e2 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-fafc9194-9e8a-427b-ae45-d6386a9eb699');
+        const element = document.querySelector('#df-9b7a5f21-9fc1-45e2-b081-6a68bbbcf1e2');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1323,10 +1789,137 @@ document.write(`
       }
     </script>
   </div>
-  
+
+
+<div id="df-87a98d6d-865b-45ff-a5ab-aa734a06e5df">
+  <button class="colab-df-quickchart" onclick="quickchart('df-87a98d6d-865b-45ff-a5ab-aa734a06e5df')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-87a98d6d-865b-45ff-a5ab-aa734a06e5df button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
     </div>
   </div>
-  </div></div>
+</div></div>
 </div>
 <p><strong>DECISION TREE</strong></p>
 <div class="cell docutils container">
@@ -1353,11 +1946,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Decision Tree: 0.8779527559055118
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Decision Tree: 0.8753280839895013
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-d354b3cc-67e1-43eb-b323-1d72f0576549" class="colab-df-container">
+  <div id="df-65802d01-2137-4533-9ac5-daef014d8bdd" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1441,17 +2034,17 @@ document.write(`
 <p>762 rows × 2 columns</p>
 </div>
     <div class="colab-df-buttons">
-      
+
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-d354b3cc-67e1-43eb-b323-1d72f0576549')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-65802d01-2137-4533-9ac5-daef014d8bdd')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
-      
+
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
   </svg>
     </button>
-    
+
   <style>
     .colab-df-container {
       display:flex;
@@ -1495,12 +2088,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-d354b3cc-67e1-43eb-b323-1d72f0576549 button.colab-df-convert');
+        document.querySelector('#df-65802d01-2137-4533-9ac5-daef014d8bdd button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-d354b3cc-67e1-43eb-b323-1d72f0576549');
+        const element = document.querySelector('#df-65802d01-2137-4533-9ac5-daef014d8bdd');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1518,10 +2111,137 @@ document.write(`
       }
     </script>
   </div>
-  
+
+
+<div id="df-5e5d6fea-e560-47b2-bf13-e92e8e9dde9d">
+  <button class="colab-df-quickchart" onclick="quickchart('df-5e5d6fea-e560-47b2-bf13-e92e8e9dde9d')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-5e5d6fea-e560-47b2-bf13-e92e8e9dde9d button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
     </div>
   </div>
-  </div></div>
+</div></div>
 </div>
 <p><strong>NAIVE BAYES</strong></p>
 <div class="cell docutils container">
@@ -1552,7 +2272,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-9565f0b5-402e-437e-8637-8e823895d303" class="colab-df-container">
+  <div id="df-e1077263-2436-489c-8f3c-d38bf37545fe" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1636,17 +2356,17 @@ document.write(`
 <p>762 rows × 2 columns</p>
 </div>
     <div class="colab-df-buttons">
-      
+
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-9565f0b5-402e-437e-8637-8e823895d303')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e1077263-2436-489c-8f3c-d38bf37545fe')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
-      
+
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
   </svg>
     </button>
-    
+
   <style>
     .colab-df-container {
       display:flex;
@@ -1690,12 +2410,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-9565f0b5-402e-437e-8637-8e823895d303 button.colab-df-convert');
+        document.querySelector('#df-e1077263-2436-489c-8f3c-d38bf37545fe button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-9565f0b5-402e-437e-8637-8e823895d303');
+        const element = document.querySelector('#df-e1077263-2436-489c-8f3c-d38bf37545fe');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1713,10 +2433,137 @@ document.write(`
       }
     </script>
   </div>
-  
+
+
+<div id="df-0224a203-56bf-4f7c-a23d-72a9d63a0fcb">
+  <button class="colab-df-quickchart" onclick="quickchart('df-0224a203-56bf-4f7c-a23d-72a9d63a0fcb')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-0224a203-56bf-4f7c-a23d-72a9d63a0fcb button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
     </div>
   </div>
-  </div></div>
+</div></div>
 </div>
 </section>
 <section id="inputan-data">
@@ -1750,23 +2597,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-10-a143e937780f&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># untuk memasukkan nilai-nilai fitur</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">AREA</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan nilai area : &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">PERIMETER</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan nilai perimeter : &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">MAJORAXIS</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan nilai majoraxis : &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">MINORAXIS</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan nilai minoraxis : &quot;</span><span class="p">))</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">--&gt; </span><span class="mi">848</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">849</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">850</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>masukkan nilai area : 14656
+masukkan nilai perimeter : 494.3110046
+masukkan nilai majoraxis : 206.0200653
+masukkan nilai minoraxis : 91.73097229
+masukkan nilai eccentricity: 0.895404994
+masukkan nilai convex area: 15072
+masukkan nilai extent : 0.615436316
+hasil Prediksi: beras cammeo
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
 </pre></div>
 </div>
 </div>
