@@ -15,95 +15,47 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pandas as pd
-import numpy as np
-import pickle
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score
+# untuk memasukkan nilai-nilai fitur
+AREA = float(input("masukkan nilai area : "))
+PERIMETER = float(input("masukkan nilai perimeter : "))
+MAJORAXIS = float(input("masukkan nilai majoraxis : "))
+MINORAXIS = float(input("masukkan nilai minoraxis : "))
+ECCENTRICITY = float(input("masukkan nilai eccentricity: "))
+CONVEX_AREA = float(input("masukkan nilai convex area: "))
+EXTENT = float(input("masukkan nilai extent : "))
+
+# buat data baru untuk prediksi
+new_data = np.array([[AREA, PERIMETER, MAJORAXIS, MINORAXIS, ECCENTRICITY, CONVEX_AREA, EXTENT]])
+
+# normalisasi d146ata baru menggunakan scaler yang telah disimpan
+new_data_scaled = scalerr.transform(new_data)
+
+# prediksi CLASS untuk data baru menggunakan model SVM
+prediction = loaded_svm_model.predict(new_data_scaled)
+
+# hasil prediksi
+if prediction[0] == 1:
+  print("hasil prediksi : beras osmancik")
+else:
+  print("hasil Prediksi : beras cammeo")
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mImportError[0m                               Traceback (most recent call last)
-[0;32m<ipython-input-1-3c7159a80f02>[0m in [0;36m<cell line: 4>[0;34m()[0m
-[1;32m      2[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0;32mimport[0m [0mpickle[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 4[0;31m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mmodel_selection[0m [0;32mimport[0m [0mtrain_test_split[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      5[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mpreprocessing[0m [0;32mimport[0m [0mStandardScaler[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mmetrics[0m [0;32mimport[0m [0maccuracy_score[0m[0;34m[0m[0;34m[0m[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[0;32m<ipython-input-11-a143e937780f>[0m in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m [0;31m# untuk memasukkan nilai-nilai fitur[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mAREA[0m [0;34m=[0m [0mfloat[0m[0;34m([0m[0minput[0m[0;34m([0m[0;34m"masukkan nilai area : "[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mPERIMETER[0m [0;34m=[0m [0mfloat[0m[0;34m([0m[0minput[0m[0;34m([0m[0;34m"masukkan nilai perimeter : "[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mMAJORAXIS[0m [0;34m=[0m [0mfloat[0m[0;34m([0m[0minput[0m[0;34m([0m[0;34m"masukkan nilai majoraxis : "[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mMINORAXIS[0m [0;34m=[0m [0mfloat[0m[0;34m([0m[0minput[0m[0;34m([0m[0;34m"masukkan nilai minoraxis : "[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/__init__.py[0m in [0;36m<module>[0;34m[0m
-[1;32m     80[0m     [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m_distributor_init[0m  [0;31m# noqa: F401[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     81[0m     [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m__check_build[0m  [0;31m# noqa: F401[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 82[0;31m     [0;32mfrom[0m [0;34m.[0m[0mbase[0m [0;32mimport[0m [0mclone[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     83[0m     [0;32mfrom[0m [0;34m.[0m[0mutils[0m[0;34m.[0m[0m_show_versions[0m [0;32mimport[0m [0mshow_versions[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     84[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py[0m in [0;36mraw_input[0;34m(self, prompt)[0m
+[1;32m    846[0m         """
+[1;32m    847[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 848[0;31m             raise StdinNotImplementedError(
+[0m[1;32m    849[0m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    850[0m             )
 
-[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/base.py[0m in [0;36m<module>[0;34m[0m
-[1;32m     15[0m [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m__version__[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     16[0m [0;32mfrom[0m [0;34m.[0m[0m_config[0m [0;32mimport[0m [0mget_config[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 17[0;31m [0;32mfrom[0m [0;34m.[0m[0mutils[0m [0;32mimport[0m [0m_IS_32BIT[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     18[0m [0;32mfrom[0m [0;34m.[0m[0mutils[0m[0;34m.[0m[0m_set_output[0m [0;32mimport[0m [0m_SetOutputMixin[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     19[0m from .utils._tags import (
-
-[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/utils/__init__.py[0m in [0;36m<module>[0;34m[0m
-[1;32m     15[0m [0;32mimport[0m [0mwarnings[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     16[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 17[0;31m [0;32mfrom[0m [0mscipy[0m[0;34m.[0m[0msparse[0m [0;32mimport[0m [0missparse[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     18[0m [0;34m[0m[0m
-[1;32m     19[0m [0;32mfrom[0m [0;34m.[0m[0mmurmurhash[0m [0;32mimport[0m [0mmurmurhash3_32[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.10/dist-packages/scipy/sparse/__init__.py[0m in [0;36m<module>[0;34m[0m
-[1;32m    281[0m [0;34m[0m[0m
-[1;32m    282[0m [0;31m# For backward compatibility with v0.19.[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 283[0;31m [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0mcsgraph[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    284[0m [0;34m[0m[0m
-[1;32m    285[0m [0;31m# Deprecated namespaces, to be removed in v2.0.0[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.10/dist-packages/scipy/sparse/csgraph/__init__.py[0m in [0;36m<module>[0;34m[0m
-[1;32m    183[0m            'NegativeCycleError']
-[1;32m    184[0m [0;34m[0m[0m
-[0;32m--> 185[0;31m [0;32mfrom[0m [0;34m.[0m[0m_laplacian[0m [0;32mimport[0m [0mlaplacian[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    186[0m from ._shortest_path import (
-[1;32m    187[0m     [0mshortest_path[0m[0;34m,[0m [0mfloyd_warshall[0m[0;34m,[0m [0mdijkstra[0m[0;34m,[0m [0mbellman_ford[0m[0;34m,[0m [0mjohnson[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.10/dist-packages/scipy/sparse/csgraph/_laplacian.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      5[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m [0;32mfrom[0m [0mscipy[0m[0;34m.[0m[0msparse[0m [0;32mimport[0m [0misspmatrix[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 7[0;31m [0;32mfrom[0m [0mscipy[0m[0;34m.[0m[0msparse[0m[0;34m.[0m[0mlinalg[0m [0;32mimport[0m [0mLinearOperator[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      8[0m [0;34m[0m[0m
-[1;32m      9[0m [0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.10/dist-packages/scipy/sparse/linalg/__init__.py[0m in [0;36m<module>[0;34m[0m
-[1;32m    118[0m """
-[1;32m    119[0m [0;34m[0m[0m
-[0;32m--> 120[0;31m [0;32mfrom[0m [0;34m.[0m[0m_isolve[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    121[0m [0;32mfrom[0m [0;34m.[0m[0m_dsolve[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    122[0m [0;32mfrom[0m [0;34m.[0m[0m_interface[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.10/dist-packages/scipy/sparse/linalg/_isolve/__init__.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      2[0m [0;34m[0m[0m
-[1;32m      3[0m [0;31m#from info import __doc__[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 4[0;31m [0;32mfrom[0m [0;34m.[0m[0miterative[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      5[0m [0;32mfrom[0m [0;34m.[0m[0mminres[0m [0;32mimport[0m [0mminres[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m [0;32mfrom[0m [0;34m.[0m[0mlgmres[0m [0;32mimport[0m [0mlgmres[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.10/dist-packages/scipy/sparse/linalg/_isolve/iterative.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      7[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      8[0m [0;34m[0m[0m
-[0;32m----> 9[0;31m [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m_iterative[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     10[0m [0;34m[0m[0m
-[1;32m     11[0m [0;32mfrom[0m [0mscipy[0m[0;34m.[0m[0msparse[0m[0;34m.[0m[0mlinalg[0m[0;34m.[0m[0m_interface[0m [0;32mimport[0m [0mLinearOperator[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mImportError[0m: libopenblasp-r0-41284840.3.18.so: cannot open shared object file: No such file or directory
-
-[0;31m---------------------------------------------------------------------------[0;32m
-NOTE: If your import is failing due to a missing package, you can
-manually install dependencies using either !pip or !apt.
-
-To view examples of installing some common dependencies, click the
-"Open Examples" button below.
-[0;31m---------------------------------------------------------------------------[0m
-
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
 
