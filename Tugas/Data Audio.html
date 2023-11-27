@@ -364,11 +364,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dan-informasi-dataset"><strong>DESKRIPSI DAN INFORMASI DATASET</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-crossing-rate"><strong>ZERO CROSSING RATE</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-setelah-split-data-dan-menyimpan-normalisasi-dalam-bentuk-model"><strong>NORMALISASI SETELAH SPLIT DATA DAN MENYIMPAN NORMALISASI DALAM BENTUK MODEL</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>PREPROCESSING</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduksi-data"><strong>REDUKSI DATA</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-dari-akurasi-menjadi-satu-baris"><strong>HASIL DARI AKURASI MENJADI SATU BARIS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing"><strong>PRE-PROCESSING</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling"><strong>MODELING</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -382,6 +381,37 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-audio-2810">
 <h1><strong>DATA AUDIO 2810</strong><a class="headerlink" href="#data-audio-2810" title="Permalink to this heading">#</a></h1>
+<section id="deskripsi-dan-informasi-dataset">
+<h2><strong>DESKRIPSI DAN INFORMASI DATASET</strong><a class="headerlink" href="#deskripsi-dan-informasi-dataset" title="Permalink to this heading">#</a></h2>
+<p><strong>DATASET DIAMBIL DARI WEBSITE KAGGLE</strong></p>
+<p><a class="reference external" href="https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess?resource=download">https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess?resource=download</a></p>
+<p><strong>BUSINESS UNDERSTANDING - TUJUAN</strong></p>
+<p>Dataset ini bertujuan untuk memberikan bahan yang kaya dan bervariasi bagi peneliti atau praktisi dalam bidang pemrosesan suara dan analisis emosi untuk mengembangkan dan menguji model-model yang dapat mengenali dan memahami ekspresi emosi manusia berdasarkan sinyal audio.</p>
+<p><strong>DATA UNDERSTANDING - INFORMASI FITUR</strong></p>
+<p>Dataset audio yang digunakan untuk pengolahan ini terdiri dari 2810 rekaman suara manusia yang terstruktur dengan rapi dalam beberapa folder, mewakili berbagai ekspresi emosi manusia. Setiap folder menggambarkan kategori emosi tertentu, termasuk ‘sad’ (sedih), ‘pleasant_surprised’ (senang terkejut), ‘neutral’ (netral), ‘happy’ (bahagia), ‘fear’ (takut), ‘disgust’ (jijik), dan ‘angry’ (marah). Masing-masing folder ini mencakup variasi suara manusia yang berbeda, menciptakan keberagaman dalam ekspresi emosi.</p>
+<p>Setiap rekaman audio dalam dataset ini memiliki berbagai fitur yang diekstrak dari sinyal audio. Fitur-fitur ini memberikan wawasan tentang karakteristik dan statistik sinyal audio, membantu dalam pemahaman dan pemodelan ekspresi emosi. Beberapa fitur utama yang diekstrak melibatkan Zero Crossing Rate (ZCR) dan Root Mean Square Error (RMSE). Berikut adalah penjelasan singkat untuk masing-masing fitur :</p>
+<ul class="simple">
+<li><p>Zero Crossing Rate (ZCR) :</p>
+<ul>
+<li><p>ZCR Mean : Rata-rata tingkat perubahan tanda nol dalam sinyal audio.</p></li>
+<li><p>ZCR Median : Nilai tengah dari tingkat perubahan tanda nol.</p></li>
+<li><p>ZCR Std Dev : Deviasi standar dari tingkat perubahan tanda nol.</p></li>
+<li><p>ZCR Kurtosis : Ukuran keruncingan distribusi tingkat perubahan tanda nol.</p></li>
+<li><p>ZCR Skew : Ukuran kemiringan distribusi tingkat perubahan tanda nol.</p></li>
+</ul>
+</li>
+<li><p>Root Mean Square Error (RMSE) :</p>
+<ul>
+<li><p>RMSE : Akar kuadrat dari rata-rata dari kuadrat perbedaan antara nilai-nilai aktual dan nilai-nilai yang diprediksi.</p></li>
+<li><p>RMSE Median : Nilai tengah dari distribusi RMSE.</p></li>
+<li><p>RMSE Std Dev : Deviasi standar dari distribusi RMSE.</p></li>
+<li><p>RMSE Kurtosis : Ukuran keruncingan distribusi RMSE.</p></li>
+<li><p>RMSE Skew : Ukuran kemiringan distribusi RMSE.</p></li>
+</ul>
+</li>
+</ul>
+<p>Label untuk setiap rekaman audio diambil dari nama folder tempat rekaman tersebut disimpan, mencerminkan kategori emosi yang tercermin dalam rekaman tersebut.</p>
+</section>
 <section id="zero-crossing-rate">
 <h2><strong>ZERO CROSSING RATE</strong><a class="headerlink" href="#zero-crossing-rate" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -541,7 +571,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-1919f257-78ae-4dea-a73a-d17200f4cc0f" class="colab-df-container">
+  <div id="df-2c5b8d74-99b0-49bf-a0ae-86be3d17ba4f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -735,7 +765,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-1919f257-78ae-4dea-a73a-d17200f4cc0f')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-2c5b8d74-99b0-49bf-a0ae-86be3d17ba4f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -787,12 +817,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-1919f257-78ae-4dea-a73a-d17200f4cc0f button.colab-df-convert');
+        document.querySelector('#df-2c5b8d74-99b0-49bf-a0ae-86be3d17ba4f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-1919f257-78ae-4dea-a73a-d17200f4cc0f');
+        const element = document.querySelector('#df-2c5b8d74-99b0-49bf-a0ae-86be3d17ba4f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -812,9 +842,9 @@ document.write(`
   </div>
 
 
-<div id="df-c978afe7-af9a-4da4-8257-5feedc51a9c9">
-  <button class="colab-df-quickchart" onclick="quickchart('df-c978afe7-af9a-4da4-8257-5feedc51a9c9')"
-            title="Suggest charts."
+<div id="df-a965c35e-e78a-4895-a8f0-ae5431ff418c">
+  <button class="colab-df-quickchart" onclick="quickchart('df-a965c35e-e78a-4895-a8f0-ae5431ff418c')"
+            title="Suggest charts"
             style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
@@ -932,7 +962,7 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-c978afe7-af9a-4da4-8257-5feedc51a9c9 button');
+        document.querySelector('#df-a965c35e-e78a-4895-a8f0-ae5431ff418c button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -950,13 +980,51 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="normalisasi-setelah-split-data-dan-menyimpan-normalisasi-dalam-bentuk-model">
-<h2><strong>NORMALISASI SETELAH SPLIT DATA DAN MENYIMPAN NORMALISASI DALAM BENTUK MODEL</strong><a class="headerlink" href="#normalisasi-setelah-split-data-dan-menyimpan-normalisasi-dalam-bentuk-model" title="Permalink to this heading">#</a></h2>
+<section id="pre-processing">
+<h2><strong>PRE-PROCESSING</strong><a class="headerlink" href="#pre-processing" title="Permalink to this heading">#</a></h2>
+<p><strong>DATA PRE-PROCESSING</strong></p>
+<ul>
+<li><p>Pembersihan Data:</p>
+<p>Tidak ada nilai yang hilang, sehingga tidak perlu tindakan pembersihan data untuk missing value.</p>
+</li>
+<li><p>Normalisasi atau Standarisasi:</p>
+<p>Melakukan normalisasi atau standarisasi pada fitur-fitur yang mungkin memiliki skala yang berbeda untuk memastikan konsistensi dalam pengukuran.</p>
+</li>
+<li><p>Pembagian Data:</p>
+<p>Membagi dataset menjadi set pelatihan (train set) dan set pengujian (test set) untuk melatih dan menguji model.</p>
+</li>
+</ul>
+<p><strong>NORMALISASI SETELAH SPLIT DATA DAN MENYIMPAN NORMALISASI DALAM BENTUK MODEL</strong></p>
+<p>Normalisasi adalah proses mengubah nilai-nilai dalam dataset ke dalam skala yang seragam tanpa mengubah struktur relatif di antara nilai-nilai tersebut. Hal ini umumnya dilakukan untuk menghindari perbedaan skala yang besar antara fitur-fitur (kolom-kolom) dalam dataset, yang dapat menyebabkan model machine learning menjadi tidak stabil dan mempengaruhi kinerjanya. Proses normalisasi yang digunakan pada data latih dalam kode ini adalah menggunakan StandardScaler. Hasil normalisasi dari data latih disimpan di dalam file “scaler.pkl” menggunakan modul pickle. Selanjutnya, saat akan melakukan normalisasi data uji, scaler yang telah disimpan tadi di-load kembali menggunakan pickle, dan data uji dinormalisasi menggunakan scaler yang telah di-load. Hasil normalisasi data uji kemudian ditampilkan dalam bentuk DataFrame.</p>
+<p>Beberapa metode normalisasi umum termasuk Min-Max Scaling dan Z-core Standardization :</p>
+<ul>
+<li><p><strong>Min-Max Scaling</strong></p>
+<p>Formula :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Xscaled = X - Xmin / Xmax - Xmin
+</pre></div>
+</div>
+<p>Penjelasan :</p>
+<ul class="simple">
+<li><p>Menyebabkan nilai-nilai dalam dataset berada dalam rentang [0, 1].</p></li>
+<li><p>Cocok untuk data yang memiliki distribusi seragam.</p></li>
+</ul>
+</li>
+<li><p><strong>Z-score Standardization</strong></p>
+<p>Formula :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Z = X - μ / σ
+</pre></div>
+</div>
+<p>Penjelasan :</p>
+<ul class="simple">
+<li><p>Menyebabkan nilai-nilai dalam dataset memiliki rata-rata (μ) 0 dan deviasi standar (σ) 1.</p></li>
+<li><p>Cocok untuk data yang memiliki distribusi normal atau mendekati distribusi normal.</p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
 <span class="kn">from</span> <span class="nn">pickle</span> <span class="kn">import</span> <span class="n">dump</span>
 </pre></div>
 </div>
@@ -992,7 +1060,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d7d8d99a-b0d1-4f23-9967-1d1a47105f6c" class="colab-df-container">
+  <div id="df-11aec79c-f8a2-4b19-aabd-b6addd005563" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1186,7 +1254,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-d7d8d99a-b0d1-4f23-9967-1d1a47105f6c')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-11aec79c-f8a2-4b19-aabd-b6addd005563')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1238,12 +1306,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-d7d8d99a-b0d1-4f23-9967-1d1a47105f6c button.colab-df-convert');
+        document.querySelector('#df-11aec79c-f8a2-4b19-aabd-b6addd005563 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-d7d8d99a-b0d1-4f23-9967-1d1a47105f6c');
+        const element = document.querySelector('#df-11aec79c-f8a2-4b19-aabd-b6addd005563');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1263,9 +1331,9 @@ document.write(`
   </div>
 
 
-<div id="df-2f835942-f699-408f-bccd-ac07081b1582">
-  <button class="colab-df-quickchart" onclick="quickchart('df-2f835942-f699-408f-bccd-ac07081b1582')"
-            title="Suggest charts."
+<div id="df-dc18b9cc-f46f-4236-9444-feae2851fe7e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-dc18b9cc-f46f-4236-9444-feae2851fe7e')"
+            title="Suggest charts"
             style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
@@ -1383,7 +1451,7 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-2f835942-f699-408f-bccd-ac07081b1582 button');
+        document.querySelector('#df-dc18b9cc-f46f-4236-9444-feae2851fe7e button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1409,10 +1477,34 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="modeling">
+<h2><strong>MODELING</strong><a class="headerlink" href="#modeling" title="Permalink to this heading">#</a></h2>
+<p><strong>KNN atau K-NEAREST NEIGHBORS</strong></p>
+<p>K-Nearest Neighbors adalah salah satu algoritma dalam machine learning yang digunakan untuk klasifikasi dan regresi. Algoritma ini bekerja berdasarkan prinsip bahwa objek yang serupa cenderung berada dalam jarak yang dekat satu sama lain. Dengan kata lain, jika Anda ingin mengklasifikasikan atau memprediksi label suatu data yang baru, Anda dapat melihat pada sejumlah tetangga terdekatnya dan menentukan label berdasarkan mayoritas label dari tetangga-tetangga tersebut.</p>
+<p>Berikut adalah langkah-langkah umum dalam algoritma KNN:</p>
+<ul>
+<li><p>Menentukan Parameter K :</p>
+<p>K adalah jumlah tetangga terdekat yang akan digunakan untuk menentukan label suatu data baru. Nilai K yang optimal bisa bervariasi tergantung pada data dan masalah spesifik.</p>
+</li>
+<li><p>Menghitung Jarak :</p>
+<p>Menghitung jarak antara data baru dengan setiap data yang sudah ada dalam dataset. Beberapa metrik jarak yang umum digunakan adalah Euclidean distance, Manhattan distance, Minkowski distance, atau metrik khusus tergantung pada jenis data.</p>
+</li>
+<li><p>Menentukan Tetangga Terdekat :</p>
+<p>Memilih K tetangga terdekat berdasarkan jarak yang dihitung sebelumnya.</p>
+</li>
+<li><p>Menentukan Label :</p>
+<p>Untuk masalah klasifikasi, menentukan label mayoritas dari K tetangga tersebut. Misalnya, jika sebagian besar tetangga termasuk dalam kategori A, maka data baru juga diklasifikasikan sebagai kategori A.</p>
+</li>
+<li><p>Menghasilkan Output :</p>
+<p>Menggunakan label mayoritas untuk memprediksi label data baru.</p>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
 </pre></div>
 </div>
 </div>
@@ -1456,7 +1548,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-5 {color: black;background-color: white;}#sk-container-id-5 pre{padding: 0;}#sk-container-id-5 div.sk-toggleable {background-color: white;}#sk-container-id-5 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-5 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-5 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-5 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-5 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-5 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-5 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-5 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-5 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-5 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-5 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-5 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-5 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-5 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-5 div.sk-item {position: relative;z-index: 1;}#sk-container-id-5 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-5 div.sk-item::before, #sk-container-id-5 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-5 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-5 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-5 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-5 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-5 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-5 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-5 div.sk-label-container {text-align: center;}#sk-container-id-5 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-5 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-5" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(metric=&#x27;euclidean&#x27;, n_neighbors=13)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" checked><label for="sk-estimator-id-5" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier(metric=&#x27;euclidean&#x27;, n_neighbors=13)</pre></div></div></div></div></div></div></div>
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(metric=&#x27;euclidean&#x27;, n_neighbors=13)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier(metric=&#x27;euclidean&#x27;, n_neighbors=13)</pre></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1620,23 +1712,26 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="preprocessing">
-<h2><strong>PREPROCESSING</strong><a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
-<p>Pre-processing terdiri dari beberapa langkah :</p>
-<ol class="arabic simple">
-<li><p>Normalisasi data (penyamaan nilai data kedalam rentang 0 - 1) yang bertujuan agar ciri data yang valuenya dalam rentang jutaan atau ribuan tidak merusak komputasi.</p></li>
-<li><p>Data cleaning, data cleaning dilakukan jika ada missing value pada ciri atau fitur data, teknik mengisi value dengan cara memasukkan nilai rata2 data kolom atau fitur tersebut.</p></li>
-</ol>
-</section>
-<section id="reduksi-data">
-<h2><strong>REDUKSI DATA</strong><a class="headerlink" href="#reduksi-data" title="Permalink to this heading">#</a></h2>
-<p>Reduksi ada 2 jenis bisa menggunakan seleksi data atau transformation data (contoh nya PCA / Principal component anlysis). Seleksi data kita dapat emmilih fitur berdasarkan yang fitur / kolom yang paling berpengaruh. Sedangkan transformasi data kita perlu membuat kooordinat baru dari dari fitur yang ada sejumlah dengan jumlah fitur nya. Mengapa reduksi data atau data reduction di perlukan? karna terlalu banyak kolom / fitur / ciri yang harus dikenali tidak baik untuk pemprosesan data dan memakan waktu komputasi yang lama, maka dari itu reduksi data di lakukan untuk mendapatkan data yang terbaik. Ketika ingin mencari koordinat baru :</p>
-<ol class="arabic simple">
-<li><p>Buat matriks covarian</p></li>
-<li><p>Buat persamaan</p></li>
-</ol>
-<p>Note : Konstanta yang paling besar mengartikan di koordinat tersebut merupakan ciri paling banyak atau penting.</p>
+<p><strong>REDUKSI DATA - PCA atau PRINCIPAL COMPONENT ANALYSIS</strong></p>
+<p>Principal Component Analysis, adalah suatu metode dalam statistika dan analisis data yang digunakan untuk mereduksi dimensi data. Reduksi dimensi bertujuan untuk mengurangi jumlah variabel (fitur) dalam suatu dataset sambil mempertahankan sebanyak mungkin informasi yang dapat dijelaskan oleh variabel asli. PCA mencoba untuk mengidentifikasi arah (komponen utama) yang paling penting dalam variasi data.</p>
+<p>Berikut adalah langkah-langkah umum dalam PCA:</p>
+<ul>
+<li><p>Standarisasi Data :</p>
+<p>Memastikan bahwa semua variabel memiliki mean nol dan varians satu. Hal ini penting karena PCA sangat sensitif terhadap skala variabel.</p>
+</li>
+<li><p>Menghitung Matriks Kovariansi :</p>
+<p>Matriks kovariansi digunakan untuk mengukur sejauh mana dua variabel bervariasi bersama. Matriks kovariansi mengukur hubungan linear antar variabel.</p>
+</li>
+<li><p>Menghitung Vektor dan Nilai Eigen :</p>
+<p>Vektor eigen dan nilai eigen (eigenvalues) dari matriks kovariansi dihitung. Vektor eigen adalah vektor yang tidak berubah arah ketika hanya diperbesar atau diperkecil, dan nilai eigen mengukur jumlah variasi yang dijelaskan oleh vektor eigen tersebut.</p>
+</li>
+<li><p>Pemilihan Komponen Utama :</p>
+<p>Komponen utama dipilih berdasarkan nilai eigen. Komponen utama adalah kombinasi linear dari variabel asli yang memiliki nilai eigen tertinggi dan memuat sebagian besar variasi data.</p>
+</li>
+<li><p>Proyeksi Data :</p>
+<p>Data asli diproyeksikan ke ruang baru yang terdiri dari komponen utama yang dipilih. Ini menciptakan representasi baru dari data dengan dimensi yang lebih rendah.</p>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span> <span class="k">as</span> <span class="n">sklearnPCA</span>
@@ -1867,458 +1962,6 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="hasil-dari-akurasi-menjadi-satu-baris">
-<h2><strong>HASIL DARI AKURASI MENJADI SATU BARIS</strong><a class="headerlink" href="#hasil-dari-akurasi-menjadi-satu-baris" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">librosa</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><span class="o">,</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><span class="o">,</span> <span class="nn">pickle</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folders</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;YAF_sad&#39;</span><span class="p">,</span><span class="s1">&#39;YAF_pleasant_surprised&#39;</span><span class="p">,</span><span class="s1">&#39;YAF_neutral&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;YAF_happy&#39;</span><span class="p">,</span><span class="s1">&#39;YAF_fear&#39;</span><span class="p">,</span><span class="s1">&#39;YAF_disgust&#39;</span><span class="p">,</span><span class="s1">&#39;YAF_angry&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;OAF_Sad&#39;</span><span class="p">,</span><span class="s1">&#39;OAF_Pleasant_surprise&#39;</span><span class="p">,</span><span class="s1">&#39;OAF_neutral&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;OAF_happy&#39;</span><span class="p">,</span><span class="s1">&#39;OAF_Fear&#39;</span><span class="p">,</span><span class="s1">&#39;OAF_disgust&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;OAF_angry&#39;</span><span class="p">,</span>
-         <span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_statistics</span><span class="p">(</span><span class="n">audio_path</span><span class="p">):</span>
-    <span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>
-    <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">,</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">median</span><span class="p">,</span> <span class="n">skewness</span><span class="p">,</span> <span class="n">kurt</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="n">mode_value</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">y</span><span class="p">),</span>
-        <span class="n">skew</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">kurtosis</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">75</span><span class="p">),</span>
-        <span class="n">mode</span><span class="p">(</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="p">)</span>
-    <span class="n">zcr_mean</span><span class="p">,</span> <span class="n">zcr_median</span><span class="p">,</span> <span class="n">zcr_std_dev</span><span class="p">,</span> <span class="n">zcr_kurtosis</span><span class="p">,</span> <span class="n">zcr_skew</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">zero_crossing_rate</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)),</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">zero_crossing_rate</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)),</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">zero_crossing_rate</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)),</span>
-        <span class="n">kurtosis</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">zero_crossing_rate</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]),</span>
-        <span class="n">skew</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">zero_crossing_rate</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="p">)</span>
-    <span class="n">rmse</span><span class="p">,</span> <span class="n">rmse_median</span><span class="p">,</span> <span class="n">rmse_std_dev</span><span class="p">,</span> <span class="n">rmse_kurtosis</span><span class="p">,</span> <span class="n">rmse_skew</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span>
-        <span class="n">kurtosis</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">skew</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">zcr_mean</span><span class="p">,</span> <span class="n">zcr_median</span><span class="p">,</span> <span class="n">zcr_std_dev</span><span class="p">,</span> <span class="n">zcr_kurtosis</span><span class="p">,</span> <span class="n">zcr_skew</span><span class="p">,</span>
-            <span class="n">rmse</span><span class="p">,</span> <span class="n">rmse_median</span><span class="p">,</span> <span class="n">rmse_std_dev</span><span class="p">,</span> <span class="n">rmse_kurtosis</span><span class="p">,</span> <span class="n">rmse_skew</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">folders</span><span class="p">:</span>
-    <span class="n">folder_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s1">&#39;</span>
-    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder_path</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.wav&#39;</span><span class="p">):</span>
-            <span class="n">audio_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-            <span class="n">statistics</span> <span class="o">=</span> <span class="n">calculate_statistics</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>
-            <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">folder</span><span class="p">]</span> <span class="o">+</span> <span class="n">statistics</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;ZCR Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Median&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Std Dev&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Kurtosis&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Skew&#39;</span><span class="p">,</span>
-                       <span class="s1">&#39;RMSE&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Median&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Std Dev&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Kurtosis&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Skew&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_accuracies</span> <span class="o">=</span> <span class="p">{}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_names</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>  <span class="c1"># ambil nama kolom kecuali kolom &#39;Label&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">column_names</span><span class="p">:</span>
-    <span class="n">dataknn</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="n">column</span><span class="p">]]</span>
-    <span class="n">X</span> <span class="o">=</span> <span class="n">dataknn</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Label&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">dataknn</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span>
-    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-
-    <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-    <span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-    <span class="n">dump</span><span class="p">(</span><span class="n">scaler</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;scaler_</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s1">.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
-
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;scaler_</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s1">.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">standarisasi</span><span class="p">:</span>
-        <span class="n">loadscal</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">standarisasi</span><span class="p">)</span>
-
-    <span class="n">X_test_scaled</span> <span class="o">=</span> <span class="n">loadscal</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-    <span class="n">k</span> <span class="o">=</span> <span class="mi">30</span>
-    <span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;euclidean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
-        <span class="n">acc</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-
-    <span class="n">best_accuracies</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;best_accuracy&#39;</span><span class="p">:</span> <span class="n">acc</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="s1">&#39;best_k&#39;</span><span class="p">:</span> <span class="n">acc</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
-  warnings.warn(
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># membuat dataframe dari hasil akurasi terbaik</span>
-<span class="n">accuracy_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">best_accuracies</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">accuracy_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Kolom&#39;</span><span class="p">,</span> <span class="s1">&#39;Akurasi Terbaik&#39;</span><span class="p">,</span> <span class="s1">&#39;Nilai K Terbaik&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># simpan dataframe ke dalam file csv</span>
-<span class="n">accuracy_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;akurasi_terbaik.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2384,11 +2027,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dan-informasi-dataset"><strong>DESKRIPSI DAN INFORMASI DATASET</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-crossing-rate"><strong>ZERO CROSSING RATE</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-setelah-split-data-dan-menyimpan-normalisasi-dalam-bentuk-model"><strong>NORMALISASI SETELAH SPLIT DATA DAN MENYIMPAN NORMALISASI DALAM BENTUK MODEL</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>PREPROCESSING</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduksi-data"><strong>REDUKSI DATA</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-dari-akurasi-menjadi-satu-baris"><strong>HASIL DARI AKURASI MENJADI SATU BARIS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing"><strong>PRE-PROCESSING</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling"><strong>MODELING</strong></a></li>
 </ul>
   </nav></div>
 

@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas/Rice Cammeo & Osmancik';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -364,6 +366,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dan-informasi-dataset"><strong>DESKRIPSI DAN INFORMASI DATASET</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-pocessing"><strong>PRE-POCESSING</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-akurasi-menggunakan-beberapa-model"><strong>PERHITUNGAN AKURASI MENGGUNAKAN BEBERAPA MODEL</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputan-data"><strong>INPUTAN DATA</strong></a></li>
@@ -380,16 +383,23 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dataset-rice-cammeo-and-osmancik">
 <h1><strong>DATASET - RICE CAMMEO AND OSMANCIK</strong><a class="headerlink" href="#dataset-rice-cammeo-and-osmancik" title="Permalink to this heading">#</a></h1>
-<p><strong>DESKRIPSI DATASET</strong></p>
-<p>Penelitian ini difokuskan pada padi bersertifikat di Turki, dengan penekanan khusus pada dua spesies, yaitu Osmancik dan Cammeo. Osmancik dikenal memiliki luas penanaman yang signifikan sejak tahun 1997, sementara Cammeo mulai ditanam sejak tahun 2014. Sebanyak 3810 gambar butiran beras diambil untuk kedua spesies ini, dan seluruh dataset telah diproses tanpa adanya nilai yang hilang. Dari pengolahan tersebut, diperoleh 7 fitur morfologis untuk setiap butir beras, yang mencakup parameter seperti luas, keliling, panjang sumbu utama, panjang sumbu kecil, eksentrisitas, luas cembung, dan ekstensi. Selain itu, terdapat satu fitur kelas yang menyimpan informasi mengenai kategori atau spesies butir beras, seperti “Osmancik” atau “Cammeo”. Karakteristik umum spesies Osmancik mencakup penampilan yang lebar, panjang, kaca, dan kusam, sementara spesies Cammeo memiliki ciri serupa dengan penampilan yang lebar dan panjang, serta kecenderungan kaca dan kusam. Dataset ini dirancang untuk keperluan klasifikasi, dengan tujuan utama mengembangkan model yang dapat mengklasifikasikan butir beras ke dalam spesies Osmancik atau Cammeo berdasarkan fitur-fitur morfologis yang telah diekstrak.</p>
-<p><strong>INFORMASI FITUR</strong></p>
+<section id="deskripsi-dan-informasi-dataset">
+<h2><strong>DESKRIPSI DAN INFORMASI DATASET</strong><a class="headerlink" href="#deskripsi-dan-informasi-dataset" title="Permalink to this heading">#</a></h2>
+<p><strong>DATASET DIAMBIL DARI WEBSITE UCI</strong></p>
+<p><a class="reference external" href="https://archive.ics.uci.edu/dataset/545/rice+cammeo+and+osmancik">https://archive.ics.uci.edu/dataset/545/rice+cammeo+and+osmancik</a></p>
+<p><strong>CODE APLIKASI PREDIKSI RICE CAMMEO AND OSMANCIK KE STREAMLIT</strong></p>
+<p><a class="reference external" href="https://psd-rice-vgwjlmr9pmc52bwnrnrqdr.streamlit.app/">https://psd-rice-vgwjlmr9pmc52bwnrnrqdr.streamlit.app/</a></p>
+<p><strong>BUSINESS UNDESTANDING - TUJUAN</strong></p>
+<p>Tujuan dari penelitian ini adalah untuk meningkatkan pemahaman dan klasifikasi terhadap dua spesies padi bersertifikat di Turki, yaitu Osmancik dan Cammeo. Dengan memiliki pemahaman yang lebih baik tentang karakteristik dan perbedaan antara kedua spesies ini, kita dapat mendukung pengembangan kebijakan pertanian yang lebih efektif dan meningkatkan produktivitas tanaman padi bersertifikat di Turki.</p>
+<p><strong>DATA UNDERSTANDING - INFORMASI DATA DAN FITUR</strong></p>
+<p>Dataset terdiri dari 3810 gambar butiran beras untuk spesies Osmancik dan Cammeo. Karakteristik umum spesies Osmancik mencakup penampilan yang lebar, panjang, kaca, dan kusam, sementara spesies Cammeo memiliki ciri serupa dengan penampilan yang lebar dan panjang, serta kecenderungan kaca dan kusam. Terdapat 7 fitur morfologis untuk setiap butir beras, seperti daerah, keliling, panjang sumbu utama, panjang sumbu kecil, eksentrisitas, luas cembung, dan luas. Data ini dikategorikan menjadi satu fitur kelas yang menyimpan informasi tentang spesies butir beras.</p>
 <p><strong>1. AREA atau DAERAH</strong></p>
 <p>Fitur ini mengukur luas dari objek. Luas dapat dihitung dalam unit piksel atau unit luas lainnya, tergantung pada resolusi data. Luas memberikan informasi tentang ukuran relatif objek. Data yang terkait dengan fitur ini memiliki tipe data numerik.</p>
 <p><strong>2. PERIMETER</strong></p>
 <p>Perimeter mengukur panjang garis batas objek. Ini diukur sebagai jumlah panjang semua tepi objek. Perimeter bisa memberikan indikasi seberapa kompleks bentuk objek tersebut. Data yang terkait dengan fitur ini memiliki tipe data numerik.</p>
-<p><strong>3. MAJOR AXIS LENGHT atau PANJANG SUMBU UTAMA</strong></p>
+<p><strong>3. MAJOR AXIS LENGTH atau PANJANG SUMBU UTAMA</strong></p>
 <p>Sumbu utama adalah sumbu terpanjang dalam elips yang mengelilingi objek. Panjang sumbu ini memberikan gambaran tentang dimensi utama objek dan arah orientasi elips. Data yang terkait dengan fitur ini memiliki tipe data numerik.</p>
-<p><strong>4. MINOR AXIS LENGHT atau PANJANG SUMBU KECIL</strong></p>
+<p><strong>4. MINOR AXIS LENGTH atau PANJANG SUMBU KECIL</strong></p>
 <p>Sumbu kecil adalah sumbu terpendek dalam elips yang mengelilingi objek. Ini memberikan informasi tentang dimensi kedua objek dan dapat membantu menggambarkan bentuk elips. Data yang terkait dengan fitur ini memiliki tipe data numerik.</p>
 <ul>
 <li><p><strong>Panjang Sumbu Utama (Biru):</strong></p>
@@ -420,6 +430,12 @@ document.write(`
 <span class="c1"># menyimpan data atau model</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
 
+<span class="c1"># untuk membuat visualisasi seperti scatter plot dan histogram</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># untuk membuat visualisasi data yang lebih menarik</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
 <span class="c1"># membagi dataset menjadi bagian pelatihan dan pengujian</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
@@ -442,7 +458,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b404e5b7-faf9-4303-9c47-72c2aede73fb" class="colab-df-container">
+  <div id="df-340e0175-f41b-4c95-9f7f-b3625a3ea87d" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -600,7 +616,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b404e5b7-faf9-4303-9c47-72c2aede73fb')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-340e0175-f41b-4c95-9f7f-b3625a3ea87d')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -652,12 +668,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-b404e5b7-faf9-4303-9c47-72c2aede73fb button.colab-df-convert');
+        document.querySelector('#df-340e0175-f41b-4c95-9f7f-b3625a3ea87d button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b404e5b7-faf9-4303-9c47-72c2aede73fb');
+        const element = document.querySelector('#df-340e0175-f41b-4c95-9f7f-b3625a3ea87d');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -680,6 +696,93 @@ document.write(`
   </div>
   </div></div>
 </div>
+<p><strong>EKSPLORASI DATA - STATISTIK DATA</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menampilkan informasi dasar tentang dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 3810 entries, 0 to 3809
+Data columns (total 8 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   AREA          3810 non-null   int64  
+ 1   PERIMETER     3810 non-null   float64
+ 2   MAJORAXIS     3810 non-null   float64
+ 3   MINORAXIS     3810 non-null   float64
+ 4   ECCENTRICITY  3810 non-null   float64
+ 5   CONVEX_AREA   3810 non-null   int64  
+ 6   EXTENT        3810 non-null   float64
+ 7   CLASS         3810 non-null   object 
+dtypes: float64(5), int64(2), object(1)
+memory usage: 238.2+ KB
+None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menampilkan beberapa baris pertama dari dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    AREA   PERIMETER   MAJORAXIS  MINORAXIS  ECCENTRICITY  CONVEX_AREA  \
+0  15231  525.578979  229.749878  85.093788      0.928882        15617   
+1  14656  494.311005  206.020065  91.730972      0.895405        15072   
+2  14634  501.122009  214.106781  87.768288      0.912118        14954   
+3  13176  458.342987  193.337387  87.448395      0.891861        13368   
+4  14688  507.166992  211.743378  89.312454      0.906691        15262   
+
+     EXTENT   CLASS  
+0  0.572896  Cammeo  
+1  0.615436  Cammeo  
+2  0.693259  Cammeo  
+3  0.640669  Cammeo  
+4  0.646024  Cammeo  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># eksplorasi data</span>
+<span class="c1"># misalnya, jika anda ingin melihat distribusi nilai pada kolom tertentu, anda dapat menggunakan histogram</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;CLASS&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribusi Kelas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Kelas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jumlah&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/676e8d42e3785236d3da7a76a6e3bdff8a5d91f85e7d57c426901b7041a1c7d7.png" src="../_images/676e8d42e3785236d3da7a76a6e3bdff8a5d91f85e7d57c426901b7041a1c7d7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># jika anda ingin membuat scatter plot antara dua kolom, misalnya &#39;AREA&#39; dan &#39;PERIMETER&#39;, anda bisa menggunakan scatter plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AREA&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PERIMETER&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CLASS&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scatter Plot antara Area dan Perimeter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Area&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Perimeter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ddb3c08a340a4ea4635a6fc337ecb853655864c7b9e2be712c6c32c45b92d4b3.png" src="../_images/ddb3c08a340a4ea4635a6fc337ecb853655864c7b9e2be712c6c32c45b92d4b3.png" />
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menggunakan fungsi value_counts() pada kolom &#39;CLASS&#39; untuk menghitung jumlah masing-masing kelas</span>
@@ -696,42 +799,49 @@ Name: CLASS, dtype: int64
 </div>
 </div>
 </div>
+</section>
 <section id="pre-pocessing">
 <h2><strong>PRE-POCESSING</strong><a class="headerlink" href="#pre-pocessing" title="Permalink to this heading">#</a></h2>
-<p>Langkah-langkah Pre-pocessing yang akan dilakukan pada dataset Rice Cammeo and Osmancik adalah sebagai berikut :</p>
-<ul class="simple">
-<li><p>Membagi Data Menjadi Fitur (X) dan Target (y)</p></li>
-<li><p>Membagi Data Menjadi Data Latih dan Data Uji</p></li>
-<li><p>Normalisasi Data Latih Menggunakan StandardScaler</p></li>
-<li><p>Menyimpan Objek Scaler ke dalam File Menggunakan Pickle</p></li>
-<li><p>Memuat Kembali Scaler dari File Menggunakan Pickle</p></li>
-<li><p>Normalisasi Data Uji Menggunakan Scaler yang Telah Disimpan</p></li>
-<li><p>Menampilkan Hasil Normalisasi Data Uji</p></li>
+<p><strong>DATA PRE-POCESSING</strong></p>
+<ul>
+<li><p>Pembersihan Data:</p>
+<p>Tidak ada nilai yang hilang, sehingga tidak perlu tindakan pembersihan data untuk missing value.</p>
+</li>
+<li><p>Normalisasi atau Standarisasi:</p>
+<p>Melakukan normalisasi atau standarisasi pada fitur-fitur yang mungkin memiliki skala yang berbeda untuk memastikan konsistensi dalam pengukuran.</p>
+</li>
+<li><p>Pembagian Data:</p>
+<p>Membagi dataset menjadi set pelatihan (train set) dan set pengujian (test set) untuk melatih dan menguji model.</p>
+</li>
 </ul>
 <p><strong>NORMALISASI</strong></p>
 <p>Normalisasi adalah proses mengubah nilai-nilai dalam dataset ke dalam skala yang seragam tanpa mengubah struktur relatif di antara nilai-nilai tersebut. Hal ini umumnya dilakukan untuk menghindari perbedaan skala yang besar antara fitur-fitur (kolom-kolom) dalam dataset, yang dapat menyebabkan model machine learning menjadi tidak stabil dan mempengaruhi kinerjanya. Proses normalisasi yang digunakan pada data latih dalam kode ini adalah menggunakan StandardScaler. Hasil normalisasi dari data latih disimpan di dalam file “scaler.pkl” menggunakan modul pickle. Selanjutnya, saat akan melakukan normalisasi data uji, scaler yang telah disimpan tadi di-load kembali menggunakan pickle, dan data uji dinormalisasi menggunakan scaler yang telah di-load. Hasil normalisasi data uji kemudian ditampilkan dalam bentuk DataFrame.</p>
 <p>Beberapa metode normalisasi umum termasuk Min-Max Scaling dan Z-core Standardization :</p>
 <ul>
 <li><p><strong>Min-Max Scaling</strong></p>
-<p>Formula:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Xscaled = X - Xmin / Xmax - Xmin
-</pre></div>
-</div>
-<p>Penjelasan:</p>
-<ul class="simple">
+<p>Formula :</p>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+X_{\text{scaled}} = \frac{X - X_{\text{min}}}{X_{\text{max}} - X_{\text{min}}}
+\]</div>
+<p>Penjelasan :</p>
+<ul>
 <li><p>Menyebabkan nilai-nilai dalam dataset berada dalam rentang [0, 1].</p></li>
 <li><p>Cocok untuk data yang memiliki distribusi seragam.</p></li>
-</ul>
-</li>
 <li><p><strong>Z-score Standardization</strong></p>
-<p>Formula:
-Z = X - μ / σ</p>
-<p>Penjelasan:</p>
+<p>Formula :</p>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+Z = \frac{X - \mu}{\sigma}
+\]</div>
+<p>Penjelasan :</p>
 <ul class="simple">
 <li><p>Menyebabkan nilai-nilai dalam dataset memiliki rata-rata (μ) 0 dan deviasi standar (σ) 1.</p></li>
 <li><p>Cocok untuk data yang memiliki distribusi normal atau mendekati distribusi normal.</p></li>
-</ul>
-</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -795,13 +905,17 @@ Z = X - μ / σ</p>
 </section>
 <section id="perhitungan-akurasi-menggunakan-beberapa-model">
 <h2><strong>PERHITUNGAN AKURASI MENGGUNAKAN BEBERAPA MODEL</strong><a class="headerlink" href="#perhitungan-akurasi-menggunakan-beberapa-model" title="Permalink to this heading">#</a></h2>
-<p>Dari dataset yang telah dinormalisasi menggunakan scaler dan disimpan ke dalam pickle. Selanjutnya menghitung akurasi dari dataset tersebut dengan menggunakan beberapa model dibawah ini, antara lain :</p>
-<ul class="simple">
-<li><p>SVM (Support Vector Machine)</p></li>
-<li><p>Random Forest</p></li>
-<li><p>Logistic Regression</p></li>
-<li><p>Decision Tree</p></li>
-<li><p>Naive Bayes</p></li>
+<p><strong>MODELING PADA DATA</strong></p>
+<ul>
+<li><p>Pemilihan Model:</p>
+<p>Memilih model klasifikasi yang sesuai dengan tugas ini, seperti Support Vector Machine, Random Forest, Logistic Regression, Decision Tree, Naive Bayes, Decision Trees atau Random Forest, yang dapat mengklasifikasikan spesies berdasarkan fitur morfologis.</p>
+</li>
+<li><p>Pelatihan Model:</p>
+<p>Melatih model menggunakan set pelatihan untuk memahami pola-pola dalam data dan membangun model klasifikasi.</p>
+</li>
+<li><p>Evaluasi Model:</p>
+<p>Menggunakan set pengujian untuk mengevaluasi performa model, dengan menggunakan metrik evaluasi seperti akurasi, presisi, recall, dan F1-score.</p>
+</li>
 </ul>
 <p><strong>SVM</strong></p>
 <p>Support Vector Machine adalah algoritma machine learning yang digunakan untuk masalah klasifikasi dan regresi. Bekerja dengan mencari hiperlane terbaik yang memisahkan dua kelas data dalam ruang berdimensi tinggi. Misalkan memiliki dua kelas data, yaitu kelas 0 dan kelas 1. Untuk menentukan sebuah data termasuk dalam kelas 0 atau kelas 1 dilakukan dengan menghitung prediksi berdasarkan posisi data terhadap hiperplane. Rumus untuk memprediksi kelas data baru :</p>
@@ -856,7 +970,7 @@ Z = X - μ / σ</p>
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-7502001c-3ae3-4922-b452-a30161003eb4" class="colab-df-container">
+  <div id="df-ed3cea65-3264-468b-aa6d-f9ac7ca280dc" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -942,7 +1056,7 @@ Z = X - μ / σ</p>
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-7502001c-3ae3-4922-b452-a30161003eb4')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ed3cea65-3264-468b-aa6d-f9ac7ca280dc')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -994,12 +1108,12 @@ Z = X - μ / σ</p>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-7502001c-3ae3-4922-b452-a30161003eb4 button.colab-df-convert');
+        document.querySelector('#df-ed3cea65-3264-468b-aa6d-f9ac7ca280dc button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-7502001c-3ae3-4922-b452-a30161003eb4');
+        const element = document.querySelector('#df-ed3cea65-3264-468b-aa6d-f9ac7ca280dc');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1047,11 +1161,11 @@ Z = X - μ / σ</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Random Forest : 0.9212598425196851
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Random Forest : 0.926509186351706
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-c8c46c54-d3cf-40a1-9ef2-d5b420a4c7c2" class="colab-df-container">
+  <div id="df-ae3ee8f7-9348-4ea8-b7af-d2f0bed9faeb" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1137,7 +1251,7 @@ Z = X - μ / σ</p>
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c8c46c54-d3cf-40a1-9ef2-d5b420a4c7c2')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ae3ee8f7-9348-4ea8-b7af-d2f0bed9faeb')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1189,12 +1303,12 @@ Z = X - μ / σ</p>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-c8c46c54-d3cf-40a1-9ef2-d5b420a4c7c2 button.colab-df-convert');
+        document.querySelector('#df-ae3ee8f7-9348-4ea8-b7af-d2f0bed9faeb button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c8c46c54-d3cf-40a1-9ef2-d5b420a4c7c2');
+        const element = document.querySelector('#df-ae3ee8f7-9348-4ea8-b7af-d2f0bed9faeb');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1246,7 +1360,7 @@ Z = X - μ / σ</p>
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-22ae26e1-66e5-4af8-99c9-a12504c94908" class="colab-df-container">
+  <div id="df-bf157c6e-afd4-4fab-b36e-2f7637a0fc82" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1332,7 +1446,7 @@ Z = X - μ / σ</p>
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-22ae26e1-66e5-4af8-99c9-a12504c94908')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-bf157c6e-afd4-4fab-b36e-2f7637a0fc82')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1384,12 +1498,12 @@ Z = X - μ / σ</p>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-22ae26e1-66e5-4af8-99c9-a12504c94908 button.colab-df-convert');
+        document.querySelector('#df-bf157c6e-afd4-4fab-b36e-2f7637a0fc82 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-22ae26e1-66e5-4af8-99c9-a12504c94908');
+        const element = document.querySelector('#df-bf157c6e-afd4-4fab-b36e-2f7637a0fc82');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1437,11 +1551,11 @@ Z = X - μ / σ</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Decision Tree: 0.8779527559055118
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Decision Tree: 0.8753280839895013
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-3cbc3cd6-2080-4b3d-adc0-b7ba63c18924" class="colab-df-container">
+  <div id="df-a43cafcc-38d1-4cf7-b3b6-2d8b418ced49" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1527,7 +1641,7 @@ Z = X - μ / σ</p>
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-3cbc3cd6-2080-4b3d-adc0-b7ba63c18924')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a43cafcc-38d1-4cf7-b3b6-2d8b418ced49')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1579,12 +1693,12 @@ Z = X - μ / σ</p>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-3cbc3cd6-2080-4b3d-adc0-b7ba63c18924 button.colab-df-convert');
+        document.querySelector('#df-a43cafcc-38d1-4cf7-b3b6-2d8b418ced49 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-3cbc3cd6-2080-4b3d-adc0-b7ba63c18924');
+        const element = document.querySelector('#df-a43cafcc-38d1-4cf7-b3b6-2d8b418ced49');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1636,7 +1750,7 @@ Z = X - μ / σ</p>
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-cb00840e-0017-41c3-88fc-9e82e9273bef" class="colab-df-container">
+  <div id="df-a2eb0078-e73e-48eb-b7d7-51a509247e47" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1722,7 +1836,7 @@ Z = X - μ / σ</p>
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-cb00840e-0017-41c3-88fc-9e82e9273bef')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a2eb0078-e73e-48eb-b7d7-51a509247e47')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1774,12 +1888,12 @@ Z = X - μ / σ</p>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-cb00840e-0017-41c3-88fc-9e82e9273bef button.colab-df-convert');
+        document.querySelector('#df-a2eb0078-e73e-48eb-b7d7-51a509247e47 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-cb00840e-0017-41c3-88fc-9e82e9273bef');
+        const element = document.querySelector('#df-a2eb0078-e73e-48eb-b7d7-51a509247e47');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1836,7 +1950,7 @@ Z = X - μ / σ</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-11-a143e937780f&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="nn">&lt;ipython-input-15-a143e937780f&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># untuk memasukkan nilai-nilai fitur</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">AREA</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan nilai area : &quot;</span><span class="p">))</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">PERIMETER</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan nilai perimeter : &quot;</span><span class="p">))</span>
@@ -1921,6 +2035,7 @@ Z = X - μ / σ</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dan-informasi-dataset"><strong>DESKRIPSI DAN INFORMASI DATASET</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-pocessing"><strong>PRE-POCESSING</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-akurasi-menggunakan-beberapa-model"><strong>PERHITUNGAN AKURASI MENGGUNAKAN BEBERAPA MODEL</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputan-data"><strong>INPUTAN DATA</strong></a></li>
