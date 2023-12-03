@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -141,6 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -326,6 +327,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -335,6 +337,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -392,7 +395,7 @@ document.write(`
 <p><strong>BUSINESS UNDESTANDING - TUJUAN</strong></p>
 <p>Tujuan dari penelitian ini adalah untuk meningkatkan pemahaman dan klasifikasi terhadap dua spesies padi bersertifikat di Turki, yaitu Osmancik dan Cammeo. Dengan memiliki pemahaman yang lebih baik tentang karakteristik dan perbedaan antara kedua spesies ini, kita dapat mendukung pengembangan kebijakan pertanian yang lebih efektif dan meningkatkan produktivitas tanaman padi bersertifikat di Turki.</p>
 <p><strong>DATA UNDERSTANDING - INFORMASI DATA DAN FITUR</strong></p>
-<p>Dataset terdiri dari 3810 gambar butiran beras untuk spesies Osmancik dan Cammeo. Karakteristik umum spesies Osmancik mencakup penampilan yang lebar, panjang, kaca, dan kusam, sementara spesies Cammeo memiliki ciri serupa dengan penampilan yang lebar dan panjang, serta kecenderungan kaca dan kusam. Terdapat 7 fitur morfologis untuk setiap butir beras, seperti daerah, keliling, panjang sumbu utama, panjang sumbu kecil, eksentrisitas, luas cembung, dan luas. Data ini dikategorikan menjadi satu fitur kelas yang menyimpan informasi tentang spesies butir beras.</p>
+<p>Dataset terdiri dari 3810 gambar butiran beras untuk spesies Osmancik dan Cammeo. Karakteristik umum spesies Osmancik mencakup penampilan yang lebar, panjang, kaca, dan kusam, sementara spesies Cammeo memiliki ciri serupa dengan penampilan yang lebar dan panjang, serta kecenderungan kaca dan kusam. Terdapat 7 fitur morfologis untuk setiap butir beras, seperti daerah, keliling, panjang sumbu utama, panjang sumbu kecil, eksentrisitas, luas cembung, dan luas. Data ini dikategorikan menjadi satu fitur kelas yang menyimpan informasi tentang spesies butir beras. Fitur-fitur tersebut diekstraksi dari gambar yang diperoleh dari hasil serangkaian langkah pengolahan gambar.</p>
 <p><strong>1. AREA atau DAERAH</strong></p>
 <p>Fitur ini mengukur luas dari objek. Luas dapat dihitung dalam unit piksel atau unit luas lainnya, tergantung pada resolusi data. Luas memberikan informasi tentang ukuran relatif objek. Data yang terkait dengan fitur ini memiliki tipe data numerik.</p>
 <p><strong>2. PERIMETER</strong></p>
@@ -402,10 +405,10 @@ document.write(`
 <p><strong>4. MINOR AXIS LENGTH atau PANJANG SUMBU KECIL</strong></p>
 <p>Sumbu kecil adalah sumbu terpendek dalam elips yang mengelilingi objek. Ini memberikan informasi tentang dimensi kedua objek dan dapat membantu menggambarkan bentuk elips. Data yang terkait dengan fitur ini memiliki tipe data numerik.</p>
 <ul>
-<li><p><strong>Panjang Sumbu Utama (Biru):</strong></p>
+<li><p><strong>Panjang Sumbu Utama (Biru) :</strong></p>
 <p>Panjang ini adalah jarak terpanjang dari ujung ke ujung pada biji beras. Dalam konteks deteksi tepi, L menggambarkan jarak terpanjang antara dua titik sepanjang kontur yang terdeteksi.</p>
 </li>
-<li><p><strong>Panjang Sumbu Kecil (Merah):</strong></p>
+<li><p><strong>Panjang Sumbu Kecil (Merah) :</strong></p>
 <p>Panjang ini adalah jarak terpendek yang tegak lurus terhadap sumbu utama. Dalam konteks deteksi tepi, W menggambarkan jarak terpendek antara dua titik yang tegak lurus terhadap sumbu utama.</p>
 <p><img alt="xmajoraxis.png.pagespeed.ic.Dbnwk0KAr4.webp" src="data:image/webp;base64,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" /></p>
 </li>
@@ -458,7 +461,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-340e0175-f41b-4c95-9f7f-b3625a3ea87d" class="colab-df-container">
+  <div id="df-f69ef6a3-0a92-4874-82e1-f60188cd9afb" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -616,7 +619,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-340e0175-f41b-4c95-9f7f-b3625a3ea87d')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f69ef6a3-0a92-4874-82e1-f60188cd9afb')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -668,12 +671,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-340e0175-f41b-4c95-9f7f-b3625a3ea87d button.colab-df-convert');
+        document.querySelector('#df-f69ef6a3-0a92-4874-82e1-f60188cd9afb button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-340e0175-f41b-4c95-9f7f-b3625a3ea87d');
+        const element = document.querySelector('#df-f69ef6a3-0a92-4874-82e1-f60188cd9afb');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -804,13 +807,13 @@ Name: CLASS, dtype: int64
 <h2><strong>PRE-POCESSING</strong><a class="headerlink" href="#pre-pocessing" title="Permalink to this heading">#</a></h2>
 <p><strong>DATA PRE-POCESSING</strong></p>
 <ul>
-<li><p>Pembersihan Data:</p>
+<li><p>Pembersihan Data :</p>
 <p>Tidak ada nilai yang hilang, sehingga tidak perlu tindakan pembersihan data untuk missing value.</p>
 </li>
-<li><p>Normalisasi atau Standarisasi:</p>
+<li><p>Normalisasi atau Standarisasi :</p>
 <p>Melakukan normalisasi atau standarisasi pada fitur-fitur yang mungkin memiliki skala yang berbeda untuk memastikan konsistensi dalam pengukuran.</p>
 </li>
-<li><p>Pembagian Data:</p>
+<li><p>Pembagian Data :</p>
 <p>Membagi dataset menjadi set pelatihan (train set) dan set pengujian (test set) untuk melatih dan menguji model.</p>
 </li>
 </ul>
@@ -907,19 +910,22 @@ Z = \frac{X - \mu}{\sigma}
 <h2><strong>PERHITUNGAN AKURASI MENGGUNAKAN BEBERAPA MODEL</strong><a class="headerlink" href="#perhitungan-akurasi-menggunakan-beberapa-model" title="Permalink to this heading">#</a></h2>
 <p><strong>MODELING PADA DATA</strong></p>
 <ul>
-<li><p>Pemilihan Model:</p>
+<li><p>Pemilihan Model :</p>
 <p>Memilih model klasifikasi yang sesuai dengan tugas ini, seperti Support Vector Machine, Random Forest, Logistic Regression, Decision Tree, Naive Bayes, Decision Trees atau Random Forest, yang dapat mengklasifikasikan spesies berdasarkan fitur morfologis.</p>
 </li>
-<li><p>Pelatihan Model:</p>
+<li><p>Pelatihan Model :</p>
 <p>Melatih model menggunakan set pelatihan untuk memahami pola-pola dalam data dan membangun model klasifikasi.</p>
 </li>
-<li><p>Evaluasi Model:</p>
+<li><p>Evaluasi Model :</p>
 <p>Menggunakan set pengujian untuk mengevaluasi performa model, dengan menggunakan metrik evaluasi seperti akurasi, presisi, recall, dan F1-score.</p>
 </li>
 </ul>
 <p><strong>SVM</strong></p>
 <p>Support Vector Machine adalah algoritma machine learning yang digunakan untuk masalah klasifikasi dan regresi. Bekerja dengan mencari hiperlane terbaik yang memisahkan dua kelas data dalam ruang berdimensi tinggi. Misalkan memiliki dua kelas data, yaitu kelas 0 dan kelas 1. Untuk menentukan sebuah data termasuk dalam kelas 0 atau kelas 1 dilakukan dengan menghitung prediksi berdasarkan posisi data terhadap hiperplane. Rumus untuk memprediksi kelas data baru :</p>
-<p><strong>f(x) = w * x + b</strong></p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = w \cdot x + b
+\]</div>
 <p>Keterangan :</p>
 <ul class="simple">
 <li><p><strong>f(x)</strong> adalah nilai prediksi untuk data input x.</p></li>
@@ -970,7 +976,7 @@ Z = \frac{X - \mu}{\sigma}
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-ed3cea65-3264-468b-aa6d-f9ac7ca280dc" class="colab-df-container">
+  <div id="df-9676f72c-a1a1-4a9c-9b67-04689efa4e2c" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1056,7 +1062,7 @@ Z = \frac{X - \mu}{\sigma}
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ed3cea65-3264-468b-aa6d-f9ac7ca280dc')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-9676f72c-a1a1-4a9c-9b67-04689efa4e2c')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1108,12 +1114,12 @@ Z = \frac{X - \mu}{\sigma}
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ed3cea65-3264-468b-aa6d-f9ac7ca280dc button.colab-df-convert');
+        document.querySelector('#df-9676f72c-a1a1-4a9c-9b67-04689efa4e2c button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ed3cea65-3264-468b-aa6d-f9ac7ca280dc');
+        const element = document.querySelector('#df-9676f72c-a1a1-4a9c-9b67-04689efa4e2c');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1139,33 +1145,42 @@ Z = \frac{X - \mu}{\sigma}
 <p><strong>RANDOM FOREST</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library yang diperlukan</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
 
+<span class="c1"># memuat objek model Random Forest</span>
 <span class="n">random_forest_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+
+<span class="c1"># melatih model Random Forest dengan data latih yang telah dinormalisasi</span>
 <span class="n">random_forest_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
+<span class="c1"># menyimpan model terlatih ke file menggunakan pickle</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;random_forest_model.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">rf_model_file</span><span class="p">:</span>
   <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">random_forest_model</span><span class="p">,</span> <span class="n">rf_model_file</span><span class="p">)</span>
 
+<span class="c1"># memuat model terlatih dari file</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;random_forest_model.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">rf_model_file</span><span class="p">:</span>
   <span class="n">loaded_rf_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">rf_model_file</span><span class="p">)</span>
 
+<span class="c1"># membuat prediksi pada data uji</span>
 <span class="n">y_pred_rf</span> <span class="o">=</span> <span class="n">loaded_rf_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaler</span><span class="p">)</span>
 
+<span class="c1"># evaluasi akurasi model</span>
 <span class="n">accuracy_rf</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_rf</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;akurasi Random Forest :&quot;</span><span class="p">,</span> <span class="n">accuracy_rf</span><span class="p">)</span>
 
+<span class="c1"># membuat dataframe untuk membandingkan label sebenarnya dan label yang diprediksi</span>
 <span class="n">rf_results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Actual Label&#39;</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Prediksi Random Forest&#39;</span><span class="p">:</span> <span class="n">y_pred_rf</span><span class="p">})</span>
 <span class="n">rf_results_df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Random Forest : 0.926509186351706
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Random Forest : 0.9225721784776902
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-ae3ee8f7-9348-4ea8-b7af-d2f0bed9faeb" class="colab-df-container">
+  <div id="df-0edd53c7-1d45-4783-8944-70ac2cacb781" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1251,7 +1266,7 @@ Z = \frac{X - \mu}{\sigma}
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ae3ee8f7-9348-4ea8-b7af-d2f0bed9faeb')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-0edd53c7-1d45-4783-8944-70ac2cacb781')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1303,12 +1318,12 @@ Z = \frac{X - \mu}{\sigma}
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ae3ee8f7-9348-4ea8-b7af-d2f0bed9faeb button.colab-df-convert');
+        document.querySelector('#df-0edd53c7-1d45-4783-8944-70ac2cacb781 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ae3ee8f7-9348-4ea8-b7af-d2f0bed9faeb');
+        const element = document.querySelector('#df-0edd53c7-1d45-4783-8944-70ac2cacb781');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1334,22 +1349,31 @@ Z = \frac{X - \mu}{\sigma}
 <p><strong>LOGISTIC REGRESSION</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library yang diperlukan</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 
+<span class="c1"># memuat objek model Logistic Regression</span>
 <span class="n">logistic_regression_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+
+<span class="c1"># melatih model Logistic Regression dengan data latih yang telah dinormalisasi</span>
 <span class="n">logistic_regression_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
+<span class="c1"># menyimpan model terlatih ke file menggunakan pickle</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;logistic_regression_model.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">lr_model_file</span><span class="p">:</span>
   <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">logistic_regression_model</span><span class="p">,</span> <span class="n">lr_model_file</span><span class="p">)</span>
 
+<span class="c1"># memuat model terlatih dari file</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;logistic_regression_model.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">lr_model_file</span><span class="p">:</span>
   <span class="n">loaded_lr_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">lr_model_file</span><span class="p">)</span>
 
+<span class="c1"># membuat prediksi pada data uji</span>
 <span class="n">y_pred_lr</span> <span class="o">=</span> <span class="n">loaded_lr_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaler</span><span class="p">)</span>
 
+<span class="c1"># evaluasi akurasi model</span>
 <span class="n">accuracy_lr</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lr</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;akurasi Logistic Regression:&quot;</span><span class="p">,</span> <span class="n">accuracy_lr</span><span class="p">)</span>
 
+<span class="c1"># membuat dataframe untuk membandingkan label sebenarnya dan label yang diprediksi</span>
 <span class="n">lr_results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Actual Label&#39;</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Prediksi Logistic Regression&#39;</span><span class="p">:</span> <span class="n">y_pred_lr</span><span class="p">})</span>
 <span class="n">lr_results_df</span>
 </pre></div>
@@ -1360,7 +1384,7 @@ Z = \frac{X - \mu}{\sigma}
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-bf157c6e-afd4-4fab-b36e-2f7637a0fc82" class="colab-df-container">
+  <div id="df-57fe3df7-c6c6-4abe-85ae-d13bf014ae4b" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1446,7 +1470,7 @@ Z = \frac{X - \mu}{\sigma}
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-bf157c6e-afd4-4fab-b36e-2f7637a0fc82')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-57fe3df7-c6c6-4abe-85ae-d13bf014ae4b')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1498,12 +1522,12 @@ Z = \frac{X - \mu}{\sigma}
 
     <script>
       const buttonEl =
-        document.querySelector('#df-bf157c6e-afd4-4fab-b36e-2f7637a0fc82 button.colab-df-convert');
+        document.querySelector('#df-57fe3df7-c6c6-4abe-85ae-d13bf014ae4b button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-bf157c6e-afd4-4fab-b36e-2f7637a0fc82');
+        const element = document.querySelector('#df-57fe3df7-c6c6-4abe-85ae-d13bf014ae4b');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1529,33 +1553,42 @@ Z = \frac{X - \mu}{\sigma}
 <p><strong>DECISION TREE</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library yang diperlukan</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 
+<span class="c1"># memuat objek model Decision Tree</span>
 <span class="n">decision_tree_model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+
+<span class="c1"># melatih model Decision Tree dengan data latih yang telah dinormalisasi</span>
 <span class="n">decision_tree_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
+<span class="c1"># menyimpan model terlatih ke file menggunakan pickle</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;decision_tree_model.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">dt_model_file</span><span class="p">:</span>
   <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">decision_tree_model</span><span class="p">,</span> <span class="n">dt_model_file</span><span class="p">)</span>
 
+<span class="c1"># memuat model terlatih dari file</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;decision_tree_model.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">dt_model_file</span><span class="p">:</span>
   <span class="n">loaded_dt_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">dt_model_file</span><span class="p">)</span>
 
+<span class="c1"># membuat prediksi pada data uji</span>
 <span class="n">y_pred_dt</span> <span class="o">=</span> <span class="n">loaded_dt_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaler</span><span class="p">)</span>
 
+<span class="c1"># evaluasi akurasi model</span>
 <span class="n">accuracy_dt</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_dt</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;akurasi Decision Tree:&quot;</span><span class="p">,</span> <span class="n">accuracy_dt</span><span class="p">)</span>
 
+<span class="c1"># membuat dataframe untuk membandingkan label sebenarnya dan label yang diprediksi</span>
 <span class="n">dt_results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Actual Label&#39;</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Prediksi Decision Tree&#39;</span><span class="p">:</span> <span class="n">y_pred_dt</span><span class="p">})</span>
 <span class="n">dt_results_df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Decision Tree: 0.8753280839895013
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi Decision Tree: 0.8805774278215223
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-a43cafcc-38d1-4cf7-b3b6-2d8b418ced49" class="colab-df-container">
+  <div id="df-e1705e98-2d8b-408c-9e83-3d5fa860a89a" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1641,7 +1674,7 @@ Z = \frac{X - \mu}{\sigma}
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-a43cafcc-38d1-4cf7-b3b6-2d8b418ced49')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e1705e98-2d8b-408c-9e83-3d5fa860a89a')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1693,12 +1726,12 @@ Z = \frac{X - \mu}{\sigma}
 
     <script>
       const buttonEl =
-        document.querySelector('#df-a43cafcc-38d1-4cf7-b3b6-2d8b418ced49 button.colab-df-convert');
+        document.querySelector('#df-e1705e98-2d8b-408c-9e83-3d5fa860a89a button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-a43cafcc-38d1-4cf7-b3b6-2d8b418ced49');
+        const element = document.querySelector('#df-e1705e98-2d8b-408c-9e83-3d5fa860a89a');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1724,22 +1757,31 @@ Z = \frac{X - \mu}{\sigma}
 <p><strong>NAIVE BAYES</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library yang diperlukan</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
 
+<span class="c1"># memuat objek model Naive Bayes</span>
 <span class="n">naive_bayes_model</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+
+<span class="c1"># melatih model Naive Bayes dengan data latih yang telah dinormalisasi</span>
 <span class="n">naive_bayes_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
+<span class="c1"># menyimpan model terlatih ke file menggunakan pickle</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;naive_bayes_model.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">nb_model_file</span><span class="p">:</span>
   <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">naive_bayes_model</span><span class="p">,</span> <span class="n">nb_model_file</span><span class="p">)</span>
 
+<span class="c1"># memuat model terlatih dari file</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;naive_bayes_model.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">nb_model_file</span><span class="p">:</span>
   <span class="n">loaded_nb_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">nb_model_file</span><span class="p">)</span>
 
+<span class="c1"># membuat prediksi pada data uji</span>
 <span class="n">y_pred_nb</span> <span class="o">=</span> <span class="n">loaded_nb_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaler</span><span class="p">)</span>
 
+<span class="c1"># evaluasi akurasi model</span>
 <span class="n">accuracy_nb</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_nb</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;akurasi Naive Bayes:&quot;</span><span class="p">,</span> <span class="n">accuracy_nb</span><span class="p">)</span>
 
+<span class="c1"># membuat dataframe untuk membandingkan label sebenarnya dan label yang diprediksi</span>
 <span class="n">nb_results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Actual Label&#39;</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Prediksi Naive Bayes&#39;</span><span class="p">:</span> <span class="n">y_pred_nb</span><span class="p">})</span>
 <span class="n">nb_results_df</span>
 </pre></div>
@@ -1750,7 +1792,7 @@ Z = \frac{X - \mu}{\sigma}
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-a2eb0078-e73e-48eb-b7d7-51a509247e47" class="colab-df-container">
+  <div id="df-f7c03ab9-3080-473d-82ce-12df88fc8e78" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1836,7 +1878,7 @@ Z = \frac{X - \mu}{\sigma}
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-a2eb0078-e73e-48eb-b7d7-51a509247e47')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f7c03ab9-3080-473d-82ce-12df88fc8e78')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1888,12 +1930,12 @@ Z = \frac{X - \mu}{\sigma}
 
     <script>
       const buttonEl =
-        document.querySelector('#df-a2eb0078-e73e-48eb-b7d7-51a509247e47 button.colab-df-convert');
+        document.querySelector('#df-f7c03ab9-3080-473d-82ce-12df88fc8e78 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-a2eb0078-e73e-48eb-b7d7-51a509247e47');
+        const element = document.querySelector('#df-f7c03ab9-3080-473d-82ce-12df88fc8e78');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1933,7 +1975,7 @@ Z = \frac{X - \mu}{\sigma}
 <span class="c1"># buat data baru untuk prediksi</span>
 <span class="n">new_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">AREA</span><span class="p">,</span> <span class="n">PERIMETER</span><span class="p">,</span> <span class="n">MAJORAXIS</span><span class="p">,</span> <span class="n">MINORAXIS</span><span class="p">,</span> <span class="n">ECCENTRICITY</span><span class="p">,</span> <span class="n">CONVEX_AREA</span><span class="p">,</span> <span class="n">EXTENT</span><span class="p">]])</span>
 
-<span class="c1"># normalisasi d146ata baru menggunakan scaler yang telah disimpan</span>
+<span class="c1"># normalisasi data baru menggunakan scaler yang telah disimpan</span>
 <span class="n">new_data_scaled</span> <span class="o">=</span> <span class="n">scalerr</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
 
 <span class="c1"># prediksi CLASS untuk data baru menggunakan model SVM</span>
@@ -1950,7 +1992,7 @@ Z = \frac{X - \mu}{\sigma}
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-15-a143e937780f&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="nn">&lt;ipython-input-15-a337fa7e6af7&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># untuk memasukkan nilai-nilai fitur</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">AREA</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan nilai area : &quot;</span><span class="p">))</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">PERIMETER</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan nilai perimeter : &quot;</span><span class="p">))</span>
@@ -2000,7 +2042,7 @@ Z = \frac{X - \mu}{\sigma}
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="Data%20Audio.html"
@@ -2060,6 +2102,7 @@ By Nabila Atira Qurratul Aini
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -2086,8 +2129,8 @@ By Nabila Atira Qurratul Aini
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
