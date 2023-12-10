@@ -419,12 +419,22 @@ document.write(`
 <h2><strong>ZERO CROSSING RATE</strong><a class="headerlink" href="#zero-crossing-rate" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengimpor modul untuk mengakses google drive</span>
 <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+
+<span class="c1"># mengimpor modul untuk interaksi dengan sistem operasi</span>
 <span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># mengimpor modul untuk pemrosesan audio</span>
 <span class="kn">import</span> <span class="nn">librosa</span>
+
+<span class="c1"># mengimpor modul untuk operasi numerik</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># mengimpor modul untuk manipulasi dan analisis data</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># mengimpor fungsi statistik tertentu dari modul scipy.stats</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">skew</span><span class="p">,</span> <span class="n">kurtosis</span><span class="p">,</span> <span class="n">mode</span>
 </pre></div>
 </div>
@@ -432,7 +442,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mount Google Drive</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengaitkan atau mount google drive ke colab</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -440,8 +450,8 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-2-0d7ba1708b8f&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># mount Google Drive</span>
+<span class="nn">&lt;ipython-input-2-d4bc4b978eec&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># mengaitkan atau mount google drive ke colab</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
@@ -502,9 +512,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_statistics</span><span class="p">(</span><span class="n">audio_path</span><span class="p">):</span>
+    <span class="c1"># memuat file audio menggunakan librosa</span>
     <span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>
 
-    <span class="c1"># untuk menghitung nilai statistika</span>
+    <span class="c1"># untuk menghitung nilai statistika sinyal audio</span>
     <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="n">std_dev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="n">max_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -531,6 +542,7 @@ document.write(`
     <span class="n">rmse_kurtosis</span> <span class="o">=</span> <span class="n">kurtosis</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">rmse_skew</span> <span class="o">=</span> <span class="n">skew</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
+    <span class="c1"># mengembalikan hasil dalam bentuk list</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">zcr_mean</span><span class="p">,</span> <span class="n">zcr_median</span><span class="p">,</span> <span class="n">zcr_std_dev</span><span class="p">,</span> <span class="n">zcr_kurtosis</span><span class="p">,</span> <span class="n">zcr_skew</span><span class="p">,</span> <span class="n">rmse</span><span class="p">,</span> <span class="n">rmse_median</span><span class="p">,</span> <span class="n">rmse_std_dev</span><span class="p">,</span> <span class="n">rmse_kurtosis</span><span class="p">,</span> <span class="n">rmse_skew</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -547,10 +559,18 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">folders</span><span class="p">:</span>
     <span class="n">folder_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="c1"># iterasi melalui setiap file dalam folder</span>
     <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder_path</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.wav&#39;</span><span class="p">):</span>
+
+            <span class="c1"># konstruksi path file audio</span>
             <span class="n">audio_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+            <span class="c1"># hitung statistik dari file audio</span>
             <span class="n">statistics</span> <span class="o">=</span> <span class="n">calculate_statistics</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>
+
+            <span class="c1"># tambahkan nama folder dan statistik ke dalam list features</span>
             <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">folder</span><span class="p">]</span> <span class="o">+</span> <span class="n">statistics</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -559,7 +579,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># membuat dataframe dari data</span>
-<span class="n">columns</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;ZCR Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Median&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Std Dev&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Kurtosis&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Skew&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Median&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Std Dev&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Kurtosis&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Skew&#39;</span><span class="p">]</span>
+<span class="n">columns</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;ZCR Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Maedian&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Std Dev&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Kurtosis&#39;</span><span class="p">,</span> <span class="s1">&#39;ZCR Skew&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Median&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Std Dev&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Kurtosis&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSE Skew&#39;</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1026,8 +1046,13 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import modul untuk membagi data menjadi subset pelatihan dan pengujian</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># import modul untuk penskalaan fitur</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># import fungsi dump dari modul pickle untuk menyimpan objek python ke dalam file</span>
 <span class="kn">from</span> <span class="nn">pickle</span> <span class="kn">import</span> <span class="n">dump</span>
 </pre></div>
 </div>
@@ -1466,8 +1491,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengimpor modul pickle</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># membuka file scalerbaru.pkl dalam mode pembacaan biner (rb)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;scalerbaru.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">standarisasi</span><span class="p">:</span>
+
+    <span class="c1"># memuat objek StandardScaler yang telah disimpan</span>
     <span class="n">loadscal</span><span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">standarisasi</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1475,7 +1505,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_test_scaled</span><span class="o">=</span><span class="n">loadscal</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> <span class="c1"># normalisasi x testing dari hasil normalisasi x train yang disimpan dalam model</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># normalisasi x testing dari hasil normalisasi x train yang disimpan dalam model</span>
+<span class="n">X_test_scaled</span><span class="o">=</span><span class="n">loadscal</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1505,8 +1536,10 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import modul untuk mengukur kinerja model</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+
+<span class="c1"># import modul untuk algoritma K-Nearest Neighbors (KNN)</span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
 </pre></div>
 </div>
@@ -1514,15 +1547,23 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">100</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menentukan jumlah tetangga (k) dan membuat array untuk menyimpan akurasi</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 
+<span class="c1"># loop untuk mencoba nilai k yang berbeda</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+
+    <span class="c1"># membuat model KNN dengan jumlah tetangga n dan metrik Euclidean</span>
     <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">metric</span> <span class="o">=</span> <span class="s2">&quot;euclidean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="c1"># melakukan prediksi pada data uji</span>
     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
 
+    <span class="c1"># menghitung dan menyimpan akurasi</span>
     <span class="n">acc</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
 
+<span class="c1"># menampilkan nilai k dengan akurasi terbaik</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;akurasi terbaik adalah&#39;</span><span class="p">,</span> <span class="n">acc</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="s1">&#39;dengan nilai k =&#39;</span><span class="p">,</span> <span class="n">acc</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1535,7 +1576,10 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">metric</span> <span class="o">=</span> <span class="s2">&quot;euclidean&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># membuat model KNN dengan jumlah tetangga 13 dan metrik euclidean</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">metric</span> <span class="o">=</span> <span class="s2">&quot;euclidean&quot;</span><span class="p">)</span>
+
+<span class="c1"># menyimpan model ke dalam file menggunakan modul pickle</span>
 <span class="n">dump</span><span class="p">(</span><span class="n">knn</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;modelknn.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1543,9 +1587,16 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengimpor modul pickle</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># membuka file modelknn.pkl dalam mode pembacaan biner (rb)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;modelknn.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">knn</span><span class="p">:</span>
+
+    <span class="c1"># memuat model KNN yang telah disimpan</span>
     <span class="n">loadknn</span><span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">knn</span><span class="p">)</span>
+
+<span class="c1"># melatih model KNN pada data pelatihan setelah dimuat kembali</span>
 <span class="n">loadknn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1555,7 +1606,10 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">loadknn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># melakukan prediksi pada data uji menggunakan model KNN yang telah dimuat</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">loadknn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+
+<span class="c1"># menampilkan hasil prediksi</span>
 <span class="n">y_pred</span>
 </pre></div>
 </div>
@@ -1704,7 +1758,10 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengukur akurasi model terhadap data uji</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
+
+<span class="c1"># menampilkan nilai akurasi</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;akurasi :&quot;</span><span class="p">,</span><span class="n">accuracy</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1737,15 +1794,21 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span> <span class="k">as</span> <span class="n">sklearnPCA</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengimpor modul PCA dari scikit-learn dan memberikan alias sklearnPCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span> <span class="k">as</span> <span class="n">sklearnPCA</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sklearn_pca</span> <span class="o">=</span> <span class="n">sklearnPCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menggunakan modul PCA dari scikit-learn dengan 8 komponen utama</span>
+<span class="n">sklearn_pca</span> <span class="o">=</span> <span class="n">sklearnPCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># melakukan transformasi PCA pada data pelatihan yang telah diubah skala</span>
 <span class="n">X_train_pca</span> <span class="o">=</span> <span class="n">sklearn_pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span>
+
+<span class="c1"># menampilkan tipe data dari X_train_pca</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">X_train_pca</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1758,7 +1821,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dump</span><span class="p">(</span><span class="n">sklearn_pca</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;PCA8.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menyimpan objek sklearn_pca ke dalam file menggunakan modul pickle</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">sklearn_pca</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;PCA8.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1766,7 +1830,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># membuka file &#39;PCA8.pkl&#39; dalam mode pembacaan biner (rb)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;PCA8.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pca</span><span class="p">:</span>
+
+    <span class="c1"># memuat objek PCA yang telah disimpan</span>
     <span class="n">loadpca</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">pca</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1774,7 +1842,10 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_test_pca</span><span class="o">=</span><span class="n">loadpca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># melakukan transformasi PCA pada data uji yang telah diubah skala</span>
+<span class="n">X_test_pca</span><span class="o">=</span><span class="n">loadpca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+
+<span class="c1"># menampilkan bentuk (shape) dari X_test_pca</span>
 <span class="n">X_test_pca</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -1787,14 +1858,18 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengimpor modul KNeighborsClassifier dari scikit-learn</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># membuat objek KNeighborsClassifier dengan jumlah tetangga 15</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># melatih model KNN menggunakan data pelatihan yang telah direduksi dimensinya melalui PCA</span>
 <span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_pca</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1804,7 +1879,10 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_prediksi</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_pca</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># melakukan prediksi pada data uji yang telah direduksi dimensinya melalui PCA</span>
+<span class="n">y_prediksi</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_pca</span><span class="p">)</span>
+
+<span class="c1"># menampilkan hasil prediksi</span>
 <span class="n">y_prediksi</span>
 </pre></div>
 </div>
@@ -1952,8 +2030,12 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc_pca</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_prediksi</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengukur akurasi model terhadap data uji setelah reduksi dimensi menggunakan PCA</span>
+<span class="n">acc_pca</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_prediksi</span><span class="p">)</span>
+
+<span class="c1"># menampilkan nilai akurasi setelah PCA</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;akurasi :&quot;</span><span class="p">,</span><span class="n">acc_pca</span><span class="p">)</span>
+
 <span class="c1"># akurasi setelah di normalisasi (akurasi awal): 0.7170818505338078</span>
 </pre></div>
 </div>
